@@ -1,0 +1,337 @@
+html {
+    font-size: 65.5%;
+}
+* {
+    margin: 0;
+    padding: 0;  
+    text-decoration: none;
+    font-family: 'Jost', sans-serif;
+    list-style: none;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+}
+
+:root {
+    --background: #3C343D;
+    --background-border: #6B626C;
+}
+
+/* body {
+    font-family: Poppins;
+    height: 100vh;
+    padding: 3.2rem;display: grid;
+    place-items: center;
+    /* background-color: var(--background); 
+} */
+
+/* .wrapper {
+    max-width: 1200px;
+    margin: 0 auto;   
+} */
+
+/*Nav Bar*/
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 2rem 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* border: 1px solid black; */
+}
+header.sticky {
+    background: #FFFFFF;
+    /* padding:  10%; */
+    box-shadow: 0px 0px 10px rgba(0 0 0 / 10%);
+}
+.logo img {
+    max-width: 120px;
+    width: 50px;
+    height: 50px;
+}
+/* nav {
+    padding: 2rem;
+    margin: 2em;
+} */
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 4.1em;
+    margin: 0;
+}
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    position: relative;
+    font-weight: 400;
+}
+nav ul li a:hover {
+    color: red;
+}
+nav ul li a.active:before {
+    position: absolute;
+    content: "";
+    width: 50%;
+    height: 2px;
+    border-bottom: 3px solid black;
+    bottom: -6px;
+	transition: width .3s;
+}
+/*Microinteractions*/
+nav ul li a.active:hover:before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 2px;
+    border-bottom: 3px solid red;
+    bottom: -6px;
+    transition: width .3s;
+}
+/*Microinteractions*/
+nav ul li a:hover:before {
+    position: absolute;
+    content: "";
+    width: 50%;
+    height: 2px;
+    border-bottom: 3px solid red;
+    bottom: -6px;
+    transition: width .3s;
+}
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 2.5em;
+    margin: 0;
+    font-size: 1.5rem;
+}
+.nav-icons i {
+    margin-right: 20px;
+    color: black;
+}
+.nav-icons i:hover {
+    transform: scale(1.1);
+    color: red;
+}
+
+/* Main-Home-Section */
+section {
+    padding: 5% 10%;
+}
+.main-home {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(240, 241, 243, 0.709);
+    /* background-position: center; */
+    background-size: cover;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
+}
+.gallery {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4em;
+    width: 100%;
+    gap: 30px;
+}
+.card {
+    position: relative;
+    left: 0px;
+    width: 330px;
+    height: 50rem;
+    background-color: var(--background);
+    border-radius: 8px;
+    transition: 700ms all;
+    transform-origin: center left;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.5);
+    outline: 1px solid var(--background);
+    overflow: hidden;
+}
+.card img {
+    width: 330px;
+    height: 50rem;
+    object-fit: cover;
+    border-radius: 4px;
+}
+.card:hover {
+    cursor: pointer;
+    transform: scale(1.15);
+}
+.card:hover figcaption {
+    font-size: 1.3rem;
+    position: absolute;
+    height: 80px;
+    width: 330px;
+    display: flex;
+    background: linear-gradient(
+        to top, 
+        rgba(0, 0, 0, 0.9) 0%,
+        rgba(0, 0, 0, 0) 100%
+    );
+    color: white;
+    left: 0px;
+    bottom: 0px;
+    padding-left: 15px;
+    padding-bottom: 0;
+}
+.card:hover ~ .card {
+    font-weight: bold;
+    cursor: pointer;
+    transform: translateX(22px);
+}
+.down-arrow {
+    position: absolute;
+    top: 85%;
+    right: 11%;
+}
+.down i {
+    font-size: 5rem;
+    color: rgba(0, 0, 0, 0.723);
+    text-decoration: none;
+    transition: all .4s ease;
+}
+.down i:hover {
+    color: red;
+    transform: scale(1.3);
+    cursor: pointer;
+}
+.home-foot {
+    text-align: center;
+    font-size: 24px;
+    color: #3C343D;
+    margin-top: 3.8rem;
+    position: absolute;
+    top: 85%; left: 35%;
+    width: 500px;
+    transition: all .42s;
+}
+.home-foot:hover {
+    color: red;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+/* Gallery-Section */
+.center-text {
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 2rem;
+    margin-bottom: 5%;
+}
+.center-text span {
+    color: red;
+}
+.contact .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, auto));
+    gap: 2rem
+}
+.grid-wrapper {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-auto-flow: dense;
+    grid-auto-rows: auto;
+}
+/* .grid-wrapper div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: red 1px solid;
+} */
+.grid-wrapper div img {
+    width: 100%; max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    vertical-align: middle;
+    /* display: inline-block; */
+    transition: all .40s;
+}
+.grid-wrapper div img:hover {
+    transform: scale(0.9);
+}
+.grid-wrapper .wide {
+    grid-column: span 2;
+}
+.grid-wrapper .tall {
+    grid-row: span 2;
+}
+.grid-wrapper .big {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.heart-icon {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 25px;
+}
+.heart-icon:hover {
+    color: red;
+}
+
+/* Contact-Section */
+.contact {
+    background-color: #f3f4f6;
+}
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, auto));
+    gap: 3rem;
+}
+.first-info img{
+    width: 130px;
+    height: auto;
+}
+.contact-info h4 {
+    color: #212529;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+.contact-info p, .second-info p {
+    color: #212529;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all .40s;
+}
+.second-info p, .third-info p, .fourth-info p {
+    text-transform: capitalize;
+}
+.contact-info p:hover {
+    color: red;
+}
+.fl, .iy {
+    color: #565656;
+    margin-right: 10px;
+    font-size: 25px;
+    transition: all .40s;
+}
+.iy:hover {
+    transform: scale(1.3);
+    color: red;
+}
+.fl:hover {
+    transform: scale(1.3);
+    color: rgba(0, 0, 252, 0.9);
+}
+
+main {
+    display: flex;
+    gap: 8em;
+    margin-top: 4em;
+}
